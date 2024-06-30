@@ -35,7 +35,7 @@
                                 <td><img src="{{ asset('image') }}/{{ $food->image }}" width="100"></td>
                                 <td>{{ $food->name }}</td>
                                 <td>{{ $food->description }}</td>
-                                <td>{{ $food->price }}</td>
+                                <td>Rp. {{ number_format($food->price, 0, ',', '.') }}</td>
                                 <td>{{ $food->category->name }}</td>
                                 <td>
                                     <a href="{{ route('food.edit', $food->id) }}">
@@ -53,7 +53,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td colspan="7">Tidak ada food yang dapat ditampilkan.</td>
+                                <td colspan="7">Tidak ada makanan yang dapat ditampilkan.</td>
                             </tr>
                             @endif
                         </tbody>

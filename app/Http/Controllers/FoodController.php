@@ -74,7 +74,7 @@ class FoodController extends Controller
         $food->image = $name;
         $food->save();
         return
-            redirect()->route('food.index')->with('message', 'Food information updated');
+            redirect()->route('food.index')->with('message', 'Makanan information updated');
     }
 
     public function destroy($id)
@@ -82,7 +82,7 @@ class FoodController extends Controller
         $food = Food::find($id);
         $food->delete();
         return
-            redirect()->route('food.index')->with('message', 'Food berhasil dihapus');
+            redirect()->route('food.index')->with('message', 'Makanan berhasil dihapus');
     }
     public function listFood(){
         $categories = Category::with('food')->get();
